@@ -2,11 +2,50 @@
 drawer rails bracket
 */
 $fn = 64;
-rail_type ="Vadania 350mm Type 1"; //["Vadania 350mm Type 1]
+rail_type ="Vadania 350mm Type 1"; //["Vadania 350mm Type 1"]
 side = "left"; //["left", "right"]
+
+//set up default values, customiser can mod these.
+rail_len_X = 300;
+rail_h_Z = 30;
+rail_d_Y = 4;
+bracket_h_Z = 4;
+bracket_d_Y = 20;
+bracket_hole_d = 5.2;
+bracket_hole_offset_X = 20;
+bracket_hole_count = 5;
+rail_peg_neg_Z = 25;
+rail_peg_d = 6;
+rail_peg_positions_X = [34.75, 98.75, 162.75, 258.75];
+rail_peg_len_Y = 5.5;
+reinforcing_positions_X = [0, 60, 120, 180, 240, 296];
+reinforcing_thickness_X = 4;
+
 debug_chop = false; //[true, false]
 debug_chop_size = [400, 30, 40];
 debug_chop_offset = [0, 2, 0];
+
+//set up values for different rail types
+if (rail_type == "Vadania 350mm Type 1") {
+    rail_len_X = 300;
+    rail_h_Z = 30;
+    rail_d_Y = 5;
+    bracket_h_Z = 4;
+    bracket_d_Y = 20;
+    bracket_hole_d = 3.5;
+    bracket_hole_offset_X = 20;
+    bracket_hole_count = 5;
+    rail_peg_neg_Z = 25;
+    rail_peg_d = 6;
+    rail_peg_positions_X = [34.75, 98.75, 162.75, 258.75];
+    rail_peg_len_Y = 5.5;
+    reinforcing_positions_X = [0, 60, 120, 180, 240, 296];
+    reinforcing_thickness_X = 4;
+}
+
+
+
+
 
 module peg(od = 4, h = 5) {
     rotate([90, 0, 0]) {
@@ -170,20 +209,20 @@ render() {
         if (rail_type == "Vadania 350mm Type 1") {
             rail_side(
                 side = side, 
-                rail_len_X = 300, 
-                rail_h_Z = 30, 
-                rail_d_Y = 4, 
-                bracket_h_Z = 4, 
-                bracket_d_Y = 20, 
-                bracket_hole_d = 5.2, 
-                bracket_hole_offset_X = 20, 
-                bracket_hole_count = 5, 
-                rail_peg_neg_Z = 25, 
-                rail_peg_d = 6, 
-                rail_peg_positions_X = [35, 98.5, 162.5, 258.5], 
-                rail_peg_len_Y = 3,
-                reinforcing_positions_X = [0, 60, 120, 180, 240, 296],
-                reinforcing_thickness_X = 4
+                rail_len_X = rail_len_X, 
+                rail_h_Z = rail_h_Z, 
+                rail_d_Y = rail_d_Y, 
+                bracket_h_Z = bracket_h_Z, 
+                bracket_d_Y = bracket_d_Y, 
+                bracket_hole_d = bracket_hole_d, 
+                bracket_hole_offset_X = bracket_hole_offset_X, 
+                bracket_hole_count = bracket_hole_count, 
+                rail_peg_neg_Z = rail_peg_neg_Z, 
+                rail_peg_d = rail_peg_d, 
+                rail_peg_positions_X = rail_peg_positions_X, 
+                rail_peg_len_Y = rail_peg_len_Y,
+                reinforcing_positions_X = reinforcing_positions_X,
+                reinforcing_thickness_X = reinforcing_thickness_X
             );
 
         }
