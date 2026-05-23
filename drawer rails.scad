@@ -189,7 +189,7 @@ render() {
         }
         if (debug_chop) {
             translate(debug_chop_offset) {
-                cube(debug_chop_size, center = false);
+                %cube(debug_chop_size, center = false);
             }
         }
 
