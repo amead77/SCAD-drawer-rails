@@ -4,7 +4,7 @@ drawer rails bracket
 $fn = 64;
 rail_type ="Vadania 350mm Type 1"; //["Vadania 350mm Type 1]
 side = "left"; //["left", "right"]
-debug_chop = true; //[true, false]
+debug_chop = false; //[true, false]
 debug_chop_size = [400, 30, 40];
 debug_chop_offset = [0, 2, 0];
 
@@ -161,9 +161,6 @@ module rail_side(
                     bracket_d_Y = bracket_d_Y
                 );
             }
-
-
-
         } //left or right
     }
 }
@@ -171,23 +168,23 @@ render() {
     difference() {
 
         if (rail_type == "Vadania 350mm Type 1") {
-                rail_side(
-                    side = side, 
-                    rail_len_X = 300, 
-                    rail_h_Z = 30, 
-                    rail_d_Y = 4, 
-                    bracket_h_Z = 4, 
-                    bracket_d_Y = 20, 
-                    bracket_hole_d = 5.2, 
-                    bracket_hole_offset_X = 20, 
-                    bracket_hole_count = 5, 
-                    rail_peg_neg_Z = 25, 
-                    rail_peg_d = 6, 
-                    rail_peg_positions_X = [35, 98.5, 162.5, 258.5], 
-                    rail_peg_len_Y = 3,
-                    reinforcing_positions_X = [0, 60, 120, 180, 240, 296],
-                    reinforcing_thickness_X = 4
-                );
+            rail_side(
+                side = side, 
+                rail_len_X = 300, 
+                rail_h_Z = 30, 
+                rail_d_Y = 4, 
+                bracket_h_Z = 4, 
+                bracket_d_Y = 20, 
+                bracket_hole_d = 5.2, 
+                bracket_hole_offset_X = 20, 
+                bracket_hole_count = 5, 
+                rail_peg_neg_Z = 25, 
+                rail_peg_d = 6, 
+                rail_peg_positions_X = [35, 98.5, 162.5, 258.5], 
+                rail_peg_len_Y = 3,
+                reinforcing_positions_X = [0, 60, 120, 180, 240, 296],
+                reinforcing_thickness_X = 4
+            );
 
         }
         if (debug_chop) {
